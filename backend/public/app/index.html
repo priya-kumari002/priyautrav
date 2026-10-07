@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#1A237E" />
+  <meta name="application-name" content="priyashifter" />
+  <title>priyashifter</title>
+  <meta name="apple-mobile-web-app-title" content="priyashifter" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="app.css?v=4" />
+</head>
+<body>
+  <div class="shell">
+    <div id="app">
+      <section id="screen-signin" class="screen active">
+        <header class="brand"><span class="brand-icon">🚚</span> priyashifter</header>
+        <div class="card">
+          <h1>Enter Your Phone Number</h1>
+          <p class="sub">We’ll send a 4-digit OTP to verify you.</p>
+          <div class="phone-row">
+            <span class="cc">🇮🇳 +91</span>
+            <input id="phone" type="tel" maxlength="10" placeholder="10 digit mobile" inputmode="numeric" autocomplete="tel" />
+          </div>
+          <p id="err-signin" class="err"></p>
+          <button id="btn-send-otp" type="button" class="btn primary">Continue</button>
+        </div>
+      </section>
+
+      <section id="screen-otp" class="screen">
+        <header class="brand"><span class="brand-icon">🚚</span> priyashifter</header>
+        <div class="card">
+          <h1>Verify Phone Number</h1>
+          <p class="hint" id="otp-hint"></p>
+          <p id="dev-otp" class="dev-otp"></p>
+          <input id="otp" type="tel" maxlength="4" placeholder="• • • •" inputmode="numeric" class="otp-input" />
+          <p id="err-otp" class="err"></p>
+          <button id="btn-verify" type="button" class="btn primary">Verify OTP</button>
+        </div>
+      </section>
+
+      <section id="screen-home" class="screen">
+        <header class="topbar topbar-spread">
+          <span>Home</span>
+          <button type="button" id="btn-logout" class="btn-logout">Logout</button>
+        </header>
+        <div class="pickup-bar"><span class="pin">📍</span><div><small>Pickup at</small><strong>221B Baker Street</strong></div></div>
+        <div class="banner"><div><strong>Any Where. Any Time.</strong><br/>Fast Shifting.</div><span>🚛</span></div>
+        <h2 class="section-title">Choose Your Transport</h2>
+        <div id="transport-grid" class="grid"></div>
+        <p id="err-home" class="err"></p>
+      </section>
+
+      <section id="screen-location" class="screen">
+        <header class="topbar">
+          <button type="button" id="btn-back-loc" class="back" aria-label="Back">←</button>
+          Where to Shift?
+        </header>
+        <div class="card flat">
+          <label class="field"><span class="dot green"></span><input id="pickup" placeholder="Pickup location" autocomplete="street-address" /></label>
+          <label class="field"><span class="dot red"></span><input id="dropoff" placeholder="Drop-off location" /></label>
+          <div class="map-preview" aria-hidden="true"><span>A</span><span class="line"></span><span>B</span></div>
+          <p id="err-loc" class="err"></p>
+          <button id="btn-loc-continue" type="button" class="btn primary">Continue</button>
+        </div>
+      </section>
+
+      <section id="screen-order" class="screen">
+        <header class="topbar">
+          <button type="button" id="btn-back-order" class="back" aria-label="Back">←</button>
+          Order Details
+        </header>
+        <p id="transport-chip" class="chip"></p>
+        <p id="route-summary" class="route"></p>
+        <div class="card flat">
+          <h3 class="label">Sender Details</h3>
+          <input id="sender-name" placeholder="Sender name" autocomplete="name" />
+          <input id="sender-phone" placeholder="Sender phone (10 digits)" type="tel" maxlength="10" inputmode="numeric" />
+          <h3 class="label">Receiver Details</h3>
+          <input id="receiver-name" placeholder="Receiver name" />
+          <input id="receiver-phone" placeholder="Receiver phone (10 digits)" type="tel" maxlength="10" inputmode="numeric" />
+          <h3 class="label">Vehicle Body Type</h3>
+          <div class="segmented">
+            <label class="seg"><input type="radio" name="body" value="open" checked /><span>Open</span></label>
+            <label class="seg"><input type="radio" name="body" value="box" /><span>Box</span></label>
+          </div>
+          <h3 class="label">Remarks</h3>
+          <textarea id="remarks" rows="3" placeholder="Optional instructions for driver"></textarea>
+          <p id="err-order" class="err"></p>
+          <button id="btn-save" type="button" class="btn primary">Save Booking</button>
+        </div>
+      </section>
+
+      <section id="screen-done" class="screen">
+        <div class="card success">
+          <div class="check">✓</div>
+          <h1>Booking Saved</h1>
+          <p id="done-id" class="sub"></p>
+          <p class="sub">Our team will assign a vehicle shortly.</p>
+          <button id="btn-new" type="button" class="btn primary">Book another shift</button>
+        </div>
+      </section>
+    </div>
+  </div>
+  <script src="app.js?v=4"></script>
+</body>
+</html>

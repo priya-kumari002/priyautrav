@@ -1,0 +1,13 @@
+node_modules/
+.env
+*.log
+.DS_Store
+backend/temp-test.json
+mobile/build/
+mobile/.dart_tool/
+mobile/.flutter-plugins-dependencies
+tools/flutter/
+temp/
+.pub-cache/
+localappdata/
+*.zip

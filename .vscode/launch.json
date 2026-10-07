@@ -1,0 +1,14 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Shifter Backend (Node)",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/backend",
+      "program": "${workspaceFolder}/backend/src/index.js",
+      "envFile": "${workspaceFolder}/backend/.env",
+      "console": "integratedTerminal"
+    }
+  ]
+}
